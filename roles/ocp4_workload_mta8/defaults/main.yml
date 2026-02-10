@@ -49,6 +49,9 @@ ocp4_workload_mta8_seed_pull_policy: IfNotPresent
 # ocp4_workload_mta8_user: admin
 # ocp4_workload_mta8_password: password
 
+# ArgoCD project to deploy the applications into
+ocp4_workload_mta8_user_app_project_prefix: appproject-
+
 # --------------------------------
 # Tackle V2 specific settings
 # --------------------------------
