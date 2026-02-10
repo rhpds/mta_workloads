@@ -1,0 +1,53 @@
+= rhpds.mta_workloads
+:toc: macro
+:toc-title: Table of Contents
+:toclevels: 3
+
+An Ansible collection for deploying MTA (Migration Toolkit for Applications) workshop and lab environments on Red Hat OpenShift.
+
+toc::[]
+
+== Overview
+
+This collection provides automation for setting up a complete MTA demonstration environment.
+
+The collection uses GitOps (ArgoCD ApplicationSets) to deploy and manage all components.
+
+== Collection Information
+
+[cols="1,2"]
+|===
+|Namespace |`rhpds`
+|Name |`mta_workloads`
+|Version |1.0.0
+|License |GPL-2.0-or-later
+|Author |Wolfgang Kulhanek <wkulhane@redhat.com>, Shaaf Syed <sshaaf@redhat.com>
+|===
+
+== Prerequisites
+
+* Red Hat OpenShift 4.x cluster
+* OpenShift GitOps (ArgoCD) installed and configured
+* Gitea instance with users pre-configured (typically via Gitea Operator)
+* LiteMaaS or compatible LLM API endpoint
+* `kubernetes.core` Ansible collection installed
+* `agnosticd.core` Ansible collection installed
+
+== Installation
+
+Install the collection from Ansible Galaxy:
+
+[source,bash]
+----
+ansible-galaxy collection install rhpds.mta_workloads
+----
+
+Or include in your `requirements.yml`:
+
+[source,yaml]
+----
+collections:
+  - name: rhpds.mta_workloads
+    version: ">=1.0.0"
+----
+
