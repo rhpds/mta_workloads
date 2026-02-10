@@ -26,7 +26,7 @@
       data:
         mta_url: >-
           https://mta-{{ ocp4_workload_mta8_namespace_base }}.{{
-          _ocp4_workload_mta8_wildcard_domain }}
+          openshift_cluster_ingress_domain }}
         tackle_user: "{{ ocp4_workload_mta8_user }}"
         tackle_password: "{{ ocp4_workload_mta8_password }}"
 
@@ -36,7 +36,7 @@
       data:
         mta_url: >-
           https://mta-{{ ocp4_workload_mta8_namespace_base }}.{{
-          _ocp4_workload_mta8_wildcard_domain }}
+          openshift_cluster_ingress_domain }}
 
 # -----------------------------------------------------------------------------
 - name: Multi user installation
@@ -55,7 +55,7 @@
         mta_url: >-
           https://mta-{{ ocp4_workload_mta8_namespace_base }}-{{
           ocp4_workload_mta8_user_base }}{{ item }}.{{
-          _ocp4_workload_mta8_wildcard_domain }}
+          openshift_cluster_ingress_domain }}
         mta_user: "{{ ocp4_workload_mta8_user }}"
         mta_password: "{{ ocp4_workload_mta8_password }}"
     loop: "{{ range(1, 1 + ocp4_workload_mta8_num_users | int) | list }}"
@@ -68,5 +68,5 @@
         mta_url: >-
           https://tackle-{{ ocp4_workload_mta8_namespace_base }}-{{
           ocp4_workload_mta8_user_base }}{{ item }}.{{
-          _ocp4_workload_mta8_wildcard_domain }}
+          openshift_cluster_ingress_domain }}
     loop: "{{ range(1, 1 + ocp4_workload_mta8_num_users | int) | list }}"
